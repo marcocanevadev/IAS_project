@@ -1,13 +1,20 @@
-function allfeats = estrai_da_percorso(path,ext,winlen,stplen)
+function [allfreq, alltime] = estrai_da_percorso(path,ext,winlen,stplen)
 addpath(genpath(pwd))
+
 list = dir([pwd,path,'/*',ext]);
-allfeats = [];
+
+allfreq = [];
+alltime = [];
+
 wa = waitbar(length(list));
+
 for i =1:length(list)
 
     waitbar(i/length(list));
-    feature = estrai_Freq_MFCCs(list(i).name,winlen,stplen);
-    allfeats = [allfeats feature];
+    [freq, time] = estrai_Time_Freq_MFCCs(list(i).name,winlen,stplen);
+    allfreq = [allfreq freq];
+    alltime = [alltime time];
+
 end
 
 close(wa)
