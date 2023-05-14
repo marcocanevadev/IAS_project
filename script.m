@@ -6,12 +6,13 @@ stple = winle/3*2;
 
 [BreathTrain_freq, BreathTrain_time] = estrai_da_percorso('/sfiles/BreathingTrain','ogg',winle,stple);
 [SneezeTrain_freq, SneezeTrain_time] = estrai_da_percorso('/sfiles/SneezingTrain','ogg',winle,stple);
-[SnoreTrain_freq, SnoreTrain_time] = estrai_da_percorso('/sfiles/BreathingTrain','ogg',winle,stple);
+[SnoreTrain_freq, SnoreTrain_time] = estrai_da_percorso('/sfiles/SnoringTrain','ogg',winle,stple);
 
-b = zeros(1,length(BreathTrain_freq));
-Sz = ones(1, length(SneezeTrain_freq));
-Sr = ones(1, length(SnoreTrain_freq))+ones(1,length(SnoreTrain_freq));
+flagB = zeros(1,length(BreathTrain_freq));
+flagSz = ones(1, length(SneezeTrain_freq));
+flagSr = ones(1, length(SnoreTrain_freq))+ones(1,length(SnoreTrain_freq));
 
+flagTr = [flagB flagSz flagSr];
 
 
 BreathTrain_all = BreathTrain_freq;
@@ -31,9 +32,5 @@ mn = mean(allfeatures);
 stdev = std(allfeatures);
 
 allfeaturesNorm = (allfeatures - repmat(mn,size(allfeatures,1),1))./repmat(stdev,size(allfeatures,1),1);
-
-[coeff, score, latent, tsquared, explained] = pca(allfeaturesNorm);
-
-C=[repmat([1 0.2 0],length(BreathTrain_all),1); repmat([1 0 0.5],length(SneezeTrain_all),1); repmat([0 0 1], length(SnoreTrain_all),1)];
 
 
