@@ -14,8 +14,8 @@ stple = winle/3*2;
         %---- Ground Truth Flags ----
 
 flagBTest = zeros(1,length(BreathTest_freq));
-flagSzTest = ones(1, length(SneezeTrain_freq));
-flagSrTest = ones(1, length(SnoreTrain_freq))+ones(1,length(SnoreTrain_freq));
+flagSzTest = ones(1, length(SneezeTest_freq));
+flagSrTest = ones(1, length(SnoreTest_freq))+ones(1,length(SnoreTest_freq));
 
 ground_Truth = [flagBTest flagSzTest flagSrTest];
 
