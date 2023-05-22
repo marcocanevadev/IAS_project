@@ -22,9 +22,11 @@ all the audio features and one to train the kNN. I chose to do so to gain
 a deeper understanding of the matter and to not limit myself to a copy￾paste.
 Results show that:
 - number of coefficients which explain 80% of variance is 10 and the most 
-significant ones are frequency domain features
+significant ones are frequency domain features.
+
 -the best number for k is around 100 and works better with the third 
-group (time and frequency together)
+group (time and frequency together).
+
 Introduction:
 The extraction of features from audio data is a useful and 
 powerfull tool for a lot of applications. It is a necessary step before 
