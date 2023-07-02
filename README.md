@@ -75,17 +75,16 @@ k = 1,2,3,5,7,10,15,20,50,75,100,250.
 the classification rates are plotted and windowlength optimization is performed for the best performing group of features.
 
 The principal component analisys (PCA) doesn't really help much graphically in the understanding of the differences of the three principal components.
-![image](/images/beforePCA.png)
-![image](/images/afterPCA.png)
+
 
 
 This is explained because the number of coeeficients required to explain 80% of variance is 10 which is relatively high.
 ![image](/images/coeffs.png)
 
 Recognition rates for all the three groups at 15 ms are very poor and the best performing group is the Alltogether group  with the best recognition rate being 53.2871 with 100 nearest neighbors, and the worst being Time-Domain. the poor performance of Time-Domain features may be caused by the short windowlength.
-![image](/images/knnrates.png)
+![image](/images/kNNrates.png)
 The best value for k for every group is 100 so windowlength optmization is performed with 100 nearest neighbors.
 Windowlength optimization gives unexpected results as performance is increased to 57.2222 which is an imrovement of 3.9351% with a windowlength of 50 ms
-![image](/images/winlenopt.png)
+![image](/images/winlenOpt.png)
 
 
