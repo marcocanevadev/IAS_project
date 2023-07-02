@@ -76,8 +76,8 @@ the classification rates are plotted and windowlength optimization is performed 
 
 The principal component analisys (PCA) doesn't really help much graphically in the understanding of the differences of the three principal components.
 
-![image](/images/beforePCA.png)
-![image](/images/afterPCA.png)
+![image](/images/before.png)
+![image](/images/after.png)
 
 This is explained because the number of coeeficients required to explain 80% of variance is 10 which is relatively high.
 
