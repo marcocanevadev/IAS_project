@@ -17,7 +17,7 @@ disp(['Setting up kNN for Freq domain Feats.'])
 disp(['Setting up kNN for all domains Feats.'])
 [pred_all,rate_all] = kappaNN(k,group_c_allTR,flagTr,group_c_allTE,ground_Truth);
    
-
+figure(3)
 plot(k,rate_all,'Color','red')
 hold on
 stem(k,rate_all,'--diamondr')
